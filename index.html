@@ -6,20 +6,34 @@
     <meta charset="UTF-8">
     <title>Krist Asherian</title>
     <link rel="stylesheet" href="portfolio.css">
+    <script src="./JS/Portfolio.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><!--Jquery inclusion-->
 </head>
 <!--End Header-->
 <body class="base">
+    <!--Fade in effect-->
+    <script> //This script and function control fade in
+        document.body.className += ' fade-out';
+        $(function() {
+            $('body').removeClass('fade-out');
+        }
+    );
+    </script>
     <!--Nav Bar-->
     <div class="Navbar">
-        <a class="active" href="#home">Home</a>
+        <a href="#home">Home</a>
+        <a href="#slides">Slideshow</a>
         <a href="#about">About</a>
         <a href="#github">GitHub</a>
-        <a href="#contact">Contact</a>
+        <a onclick="openForm()">Contact</a> <!--Makes open form function run when we click contact-->
     </div>
+    <!--Close form when we click outside the nav bar or contact form-->
+    <div class="btn cancel" onclick="closeForm()">
 <!--Home-->
 <br><br>
 <!--Video-->
 <div id="home">
+    <br><br> <!--Formatting for space-->
     <video autoplay muted loop id="typing">
         <source src="./Stylesheet/Typing.mp4" type="video/mp4">
             Your browser does not support html5 video.
@@ -37,12 +51,95 @@
 						</q>	
                         <br>-Joseph Weizenbaum<br>
                         <br>My Name is Krist Asherian. Welcome to my portfolio site. 
-                        On it I will tell you about my background and experience.<br>
-                        Thank you for stopping by, enjoy!
+                        On it I plan on showcasing my background and experience.<br>
+                        Thank you kindly for your reviewing.
                 </center>
             </strong>
         </p>
     </div>
+
+<!--Slie show section-->
+<div id="slides">
+    <div id="slides_background">
+        <div id="slides_container">
+
+            <div class="aSlide fade">
+                <div class="slideNum">1/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/SuitGreen.jpg" style="width:100%">
+                    <div class="text">I'm available to assist you on your project!</div>
+            </div>
+
+            <div class="aSlide fade">
+                <div class="slideNum">2/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/HTML_CSS_and_JavaScript.jpeg" style="width:100%">
+                    <div class="text">I'm a full-stack software developer,<br> trained in: <br>HTML, CSS, Javascript,</div>
+            </div>
+
+            <div class="aSlide fade">
+                <div class="slideNum">3/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/Python.png" style="width:100%">
+                    <div class="text">the popular programming language Python,</div>
+            </div>
+
+            <div class="aSlide fade">
+                <div class="slideNum">4/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/C_Sharp_and_Dot_NET.png" style="width:100%">
+                    <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+            </div>
+
+            <div class="aSlide fade">
+                <div class="slideNum">5/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/SQL_and_Database.jpg" style="width:100%">
+                    <div class="text">back end development, databases and SQL.</div>
+            </div>
+
+            <div class="aSlide fade">
+                <div class="slideNum">6/6</div>
+                <img class="slide_show_image" src="./Stylesheet/Images/Coding_1.jpg" style="width:100%">
+                    <div class="text">
+                        <a onclick="openForm()" href="#contact">Contact me now!</a>                   
+            </div>            
+        </div>
+
+        <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+    </div><br>
+        <div style="text-align:center">
+             <span class="dot" onclick="currentSlide(1)"></span>
+             <span class="dot" onclick="currentSlide(2)"></span>
+             <span class="dot" onclick="currentSlide(3)"></span>
+             <span class="dot" onclick="currentSlide(4)"></span>
+             <span class="dot" onclick="currentSlide(5)"></span>
+             <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+</div>
+<!--JS for slides included to make sure given precedence-->
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    function plusSlides(n) {
+    showSlides(slideIndex += n);
+    }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("aSlide");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace("active","");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+    }
+</script>
 <!-- About-->
 <div class="row" id="about">
     <div class="col_2"><!--left column-->
@@ -76,26 +173,29 @@
 </div>
 
 <!--Contact-->
-<div class="row" id="contact">
-    <div class="col_3"><!--contact image, left column-->
-        <img src="./Stylesheet/Contact.jpg" alt="contact_image">
-    </div>
-    <div class="col_1">
-        <form action="" method="get"></form><!--Where the data goes to, currently unallocated-->
-            <label>Name:</label>
-                <input type="text" id="names" name="Names" placeholder="Please enter name here.">
-            <label>Email:</label>
-                <input type="text" name="Email" id="email" placeholder="Please enter your email here.">
-            <label>Message:</label>
-                <input type="text" id="message" name="Message" placeholder="Please write your message here.">
-                <input type="submit" value="Reach out">
+<div id="contact">
+    <button onclick="openForm()" class="PopUpButton">CONTACT</button>
+    <div class="form-popup" id="cForm">
+        <form action="https://formspree.io/xpzllllb" method="POST" class="form-container"><!--Where the data goes to, now allocated by formspree.io to my personal email-->
+            <h1>Contact:</h1>
+            <label for="name"><b>Name:</b></label>
+                <input type="text" name="name" placeholder="Please enter name here." required>
+            <label for="phone"><b>Phone:</b></label>
+                <input type="text" placeholder="Please enter mobile number here. (optional)" name="phone">
+            <label for="email"><b>Email:</b></label>
+                <input type="text" name="email"  placeholder="Please enter your email here." required>
+            <label for="message"><b>Message:</b></label>
+                <input type="text" name="message" placeholder="Please write your message here.">
+            <button type="submit" class="btn">Reach Out</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>    
     </div>
+</div>
 </div>
 <!--Footer-->
     <footer>
         <p>
-            <center>&copy Krist Asherian<br>Last updated Feb 2020.</center>
+            <center>&copy Krist Asherian<br>Last updated March 2020.</center>
         </p>
     </footer>
 </body>
