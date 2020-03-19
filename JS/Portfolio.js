@@ -7,7 +7,7 @@ $(document).ready(function(){
             event.preventDefault();
             //Store link
             var Link= this.Link;
-            $('html','body').animate({
+            $('html, body').animate({
                 scrollTop: $(Link).offset().top
             }, 2000, function() {
                 window.location.Link = Link;
