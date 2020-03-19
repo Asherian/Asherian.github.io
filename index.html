@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <title>Krist Asherian</title>
     <link rel="stylesheet" href="portfolio.css">
-    <script src="./JS/Portfolio.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script><!--Jquery inclusion-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+    </script><!--Jquery inclusion-->
 </head>
 <!--End Header-->
 <body class="base">
@@ -28,7 +28,7 @@
         <a onclick="openForm()">Contact</a> <!--Makes open form function run when we click contact-->
     </div>
     <!--Close form when we click outside the nav bar or contact form-->
-    <div class="btn cancel" onclick="closeForm()">
+    <div class="btn cancel" onclick="closeForm()"></div>
 <!--Home-->
 <br><br>
 <!--Video-->
@@ -155,7 +155,7 @@
             's Software Developer Bootcamp, and trained experienced in the following
             web and programming languages: HTML, CSS, JavaScript, SQL, C#
             and more. <br><br>I am a full-stack developer and would love to
-            work with you on your project. <a href="#contact">Contact</a> me below!
+            work with you on your project. <a onclick="openForm()">Contact</a> me below!
         </p>
     </div>
 </div>
@@ -198,5 +198,8 @@
             <center>&copy Krist Asherian<br>Last updated March 2020.</center>
         </p>
     </footer>
+
+    <script src="./JS/Portfolio.js"></script>
+
 </body>
 </html>
