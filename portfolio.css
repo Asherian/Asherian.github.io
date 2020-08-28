@@ -213,7 +213,9 @@ to {opacity: 1}
     height: 448px;
     background-color: #f2f2f2;
 }
-
+.center{
+    text-align: center;
+}
 .col_2 {
     float: left;
     width: 50%;
