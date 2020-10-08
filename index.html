@@ -29,7 +29,7 @@
         <a onclick="openForm()">Contact</a> <!--Makes open form function run when we click contact-->
     </div>
     <!--Close form when we click outside the nav bar or contact form-->
-    <div class="btn cancel" onclick="closeForm()"></div>
+    <div class="btn cancel" onclick="closeForm()">
 <!--Home-->
 <br><br>
 <!--Video-->
@@ -173,7 +173,7 @@
         <img src="./Stylesheet/GitHub.png" alt="GitHub"></a>
     </div>
 </div>
-
+      </div>
 <!--Contact-->
 <div id="contact">
     <button onclick="openForm()" class="PopUpButton">CONTACT</button>
@@ -182,13 +182,13 @@
             <!--Where the data goes to, now allocated by formspree.io to my personal email-->
             <h1>Contact:</h1>
             <label for="name"><b>Name:</b></label>
-                <input type="text" name="name" placeholder="Please enter name here." required>
+                <input type="text" name="name" placeholder="What should I call you?" required>
             <label for="phone"><b>Phone:</b></label>
-                <input type="text" placeholder="Please enter mobile number here. (optional)" name="phone">
+                <input type="text" placeholder="For more immediate response, please include your number." name="phone">
             <label for="email"><b>Email:</b></label>
                 <input type="text" name="email"  placeholder="Please enter your email here." required>
             <label for="message"><b>Message:</b></label>
-                <input type="text" name="message" placeholder="Please write your message here.">
+                <input type="text" name="message" placeholder="How can we work together?">
             <button type="submit" class="btn">Reach Out</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>    
@@ -201,6 +201,5 @@
             <center>&copy Krist Asherian<br>Last updated June 2020.</center>
         </p>
     </footer>
-
 </body>
 </html>
