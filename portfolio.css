@@ -71,6 +71,7 @@ body.fade-out {
 }
 
 /*Causes video to zoom out and in on page loading*/
+
 /*@keyframes zoominoutsinglefeatured {
     0% {
         transform: scale(1.5,1.5);
@@ -79,6 +80,7 @@ body.fade-out {
         transform: scale(1,1);
     }
 }*/
+
 /*Video Section*/
 #Ocean {
     position: fixed;
@@ -93,7 +95,7 @@ body.fade-out {
 /*Text over video*/
 .video_text {
     background: rgba(0,0,0,0.5);
-    color: #fff;
+    color: #f0eb88;
     width: 100%;
     padding-top: .1vh; /*Adds padding around the text so background goes slightly beyond text.*/
     padding-bottom: 1vh;
@@ -101,6 +103,7 @@ body.fade-out {
         position: relative;
     -webkit-animation: moveNav 4s;
     animation: movevideoText 4s;
+    text-align: center;
 }
 * {
     box-sizing: border-box;
@@ -237,7 +240,6 @@ h1 {
     font-family: "Trebuchet MS", Optima;
     text-align: center;
     margin-top: 3%;
-    color: #1a1a1a;
 }
 
 p {
@@ -285,10 +287,11 @@ p:hover {
     color: #00004d;
         transition: transform 1s;
     transform: scale(1.01);
+    font-weight: normal;
 }
 
 h1:hover {
-    color: #000;
+    color: #00004d;
     font-weight: normal;
 }
 img:hover {
