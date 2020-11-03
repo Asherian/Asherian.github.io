@@ -1,0 +1,147 @@
+/*Entire page formatting*/
+html {
+    scroll-behavior: smooth; /*Ensures the page scroll smoothly when using navbar*/
+}
+
+body {
+    margin: 0%; /*Show in entire browswer window/no margin.*/
+    opacity: 1;
+    transition: 3s oapcity;
+    letter-spacing: 2vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5vw;
+    background-color: brown;
+}
+
+body.fade-out {
+        opacity: .1;
+        transition: none;
+}
+    
+/*Nav Bar Formatting*/
+.Navbar {
+    overflow: hidden;
+    background-color: rgb(106, 106, 0);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; /*Float above any other elements*/
+    position: fixed;
+    -webkit-animation: moveNav 5s;
+    animation: moveNav 5s;
+}
+
+    .Navbar a {
+        float: left;
+        display: block;
+        color: #f0eb88;
+        padding: .75vw 1vw;
+        text-decoration: none; /*Removes link underlines*/
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Helvetica, sans-serif;
+        font-size: 1.5vw;
+        text-align: center;
+        position: relative;
+        -webkit-animation: movenavText 5.75s;
+        animation: movenavText 5.75s;
+        letter-spacing: .2vw;
+    }
+/*Animation effect for moving nav bar from above the top of the screen on page load*/
+@keyframes moveNav {
+    from {
+        left: -100vw;
+    }
+
+    to {
+        left: 0vw;
+    }
+}
+
+@keyframes movenavText {
+    from {
+        top: -100vw;
+    }
+
+    to {
+        top: 0vw;
+    }
+}
+
+@keyframes movevideoText {
+    from {
+        top: -100vw
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+.Navbar a:hover {
+    background-color: darkgoldenrod;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+}
+
+.Navbar a.active {
+    background-color: darkgoldenrod;
+}
+/*Columns and grid layout*/
+* {
+    box-sizing: border-box;
+}
+.row {
+    content: "";
+    display: table;
+    clear: both;
+
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.col_1 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 448px;
+    background-color: darkgoldenrod;
+}
+
+.col_2 {
+    float: left;
+    width: 50%;
+    padding: 1.6%;
+    height: 448px;
+    background-color: darkred;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: "Trebuchet MS", Optima;
+    text-align: center;
+    margin-top: 3%;
+}
+
+p {
+    font-family: Perpetua, Rockwell Extra Bold;
+    text-align: justify;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+img {
+    filter: grayscale(75%);
+    border-radius: 8px;
+    max-width: 100%;
+    height: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
