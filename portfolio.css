@@ -90,9 +90,8 @@ body.fade-out {
     top: 0;
     z-index: -1;
     animation: zoominoutsinglefeatured 5s;
-    filter: grayscale(25%);
-   
-}
+    filter: grayscale(50%);
+   }
 
 /*Text over video*/
 .video_text {
@@ -101,7 +100,7 @@ body.fade-out {
     width: 100%;
     padding-top: .1vh; /*Adds padding around the text so background goes slightly beyond text.*/
     padding-bottom: 1vh;
-    margin-top: 23%;
+    margin-top: 5%;
         position: relative;
     -webkit-animation: moveNav 4s;
     animation: movevideoText 4s;
@@ -110,6 +109,7 @@ body.fade-out {
 * {
     box-sizing: border-box;
 }
+
 /*Slide show styling*/
 #slides_background {
     background: rgba(255, 255, 255, 0.35) /*Creates the slightly transparent background placed over the video*/
@@ -244,7 +244,7 @@ h1 {
     margin-top: 3%;
 }
 
-q {
+p {
     font-family: Perpetua, Rockwell Extra Bold;
     text-align: justify;
     letter-spacing: .1vw;
@@ -266,9 +266,10 @@ a {
     color: #2bc3ff;
 }
 
-p {
+q {
     font-style: italic;
     font-weight: bold;
+    text-align: center;
 }
 
 img {
@@ -292,7 +293,6 @@ p:hover {
 }
 
 h1:hover {
-    color: #00004d;
     font-weight: normal;
 }
 img:hover {
